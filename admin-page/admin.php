@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
+    <script src="/js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <form action="upl">
+    <form action="upl" method="POST">
     <div class="frm">
         <label for="">Name</label>
         <input type="text" name="txt-title" id="txt-title" class="frm-control">
@@ -18,24 +19,30 @@
         </div>
     </div>
     </form>
-    <script>
-        var frm = eThis.closest('form.upl');
-        var frm_data = new FormData(frm[0]);
-        $.ajax({
-            url:'http://localhost:81/southwest/home-page',
-            type:'POST',
-            data:frm_data,
-            contentType:false,
-            cache:false,
-            processData:false,
-            dataType:"json",
-            beforeSend:function(){
-                    //work before success    
-            },
-            success:function(data){   
-                    //work after success        
-            }				
-        }); 
+    <script> 
+        $(document).ready(function(){
+            $(".btnsave").click(function(){
+                var eThis = $(this);
+                var frm = eThis.closest("form.upl");
+                var frm_data = new FormData(frm[0]);
+                $.ajax({
+                    url:'http://localhost/Southwest/home-page/home.php',
+                    type:'POST',
+                    data:frm_data,
+                    contentType:false,
+                    cache:false,
+                    processData:false,
+                    dataType:"json",
+                    beforeSend:function(){
+                            alert("are you sure ?") ;
+                    },
+                    success:function(data){   
+                            //work after success
+                            alert("Successful");    
+                    }				
+                }); 
+            })
+        })
     </script>
 </body>
 </html>
