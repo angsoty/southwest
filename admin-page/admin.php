@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <form action="upl" method="POST">
+    <form class="upl">
     <div class="frm">
         <label for="">Name</label>
         <input type="text" name="txt-title" id="txt-title" class="frm-control">
@@ -23,6 +24,18 @@
         $(document).ready(function(){
             $(".btnsave").click(function(){
                 var eThis = $(this);
+                var name = $('#txt-title');
+                var description = $('#txt-description');
+                if(name.val() == ''){
+                    alert("Please input title......");
+                    name.focus; 
+                    return;
+                }      
+                 else if(description.val() == ''){
+                    alert("Please input description......");
+                    description.focus; 
+                    return;
+                }                                                
                 var frm = eThis.closest("form.upl");
                 var frm_data = new FormData(frm[0]);
                 $.ajax({
@@ -32,13 +45,16 @@
                     contentType:false,
                     cache:false,
                     processData:false,
-                    dataType:"json",
+                    // dataType:"json",
                     beforeSend:function(){
-                            alert("are you sure ?") ;
+                           eThis.html("Loading...");
                     },
                     success:function(data){   
                             //work after success
-                            alert("Successful");    
+                           eThis.html("Uploaded");
+                           name.val("");
+                           description.val("");
+                           name.focus;  
                     }				
                 }); 
             })
@@ -46,3 +62,5 @@
     </script>
 </body>
 </html>
+
+                                                        <!-- val = return value -->

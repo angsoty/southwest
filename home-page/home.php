@@ -6,7 +6,7 @@
     "southeast"
   );
   $name = $_POST['txt-title'];
-  $description = $_POST['   ']; 
+  $description = $_POST['txt-description']; 
   $sql = "INSERT INTO tbl_test VALUES(null,'$name','$description' )";
   $cn->query($sql);
 ?>
@@ -20,7 +20,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="define.css">
     <script> </script>
 </head>
 <body>
@@ -67,13 +67,13 @@
                                              <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
   <div class="carousel-inner">
     <div class="carousel-item active c-items"> 
-      <img src="https://th.bing.com/th/id/R.8ee912a14c7113bf347e1e3fe5e27367?rik=Qhu1jajA5sDbCA&riu=http%3a%2f%2fimages6.fanpop.com%2fimage%2fphotos%2f34600000%2fLuffy-3-monkey-d-luffy-34627033-1920-1080.jpg&ehk=yh%2fdEuJFLhfmy28h50wGrDNzjyvN0TDzE%2b7zumAO4QU%3d&risl=&pid=ImgRaw&r=0" class="d-block w-100 c-img" alt="slide 1">
+      <img src="../img/sc1.png" class="d-block w-100 c-img" alt="slide 1">
     </div>
     <div class="carousel-item c-items">
-      <img src="https://th.bing.com/th/id/R.567c6c78025a0431b359fbdf0a7957ba?rik=W1bcDo%2fpKKDEJQ&riu=http%3a%2f%2fimages5.fanpop.com%2fimage%2fphotos%2f25700000%2fLuffy-one-piece-25736835-1920-1080.jpg&ehk=EV2zTzkjA0zzHzbPn6attpzCT3vGThrgH%2bV8o1gFNqQ%3d&risl=&pid=ImgRaw&r=0" class="d-block w-100 c-img" alt="slide 2">
+      <img src="../img/sc2.png" class="d-block w-100 c-img" alt="slide 2">
     </div>
     <div class="carousel-item c-items">
-      <img src="https://th.bing.com/th/id/R.3d9b9c939864855fa3fc3be8aad3e89e?rik=7cwT7zikuIm2YQ&riu=http%3a%2f%2fs2.narvii.com%2fimage%2fqlmgtw4sbtwoqbz54klhd6cypfx3ggxu_hq.jpg&ehk=jW29%2fgN%2bkQLfzDxhF78thozu6ngAPu9DvLalpCIZvxI%3d&risl=&pid=ImgRaw&r=0" class="d-block w-100 c-img" alt="slide 3">
+      <img src="../img/sc3.png" class="d-block w-100 c-img" alt="slide 3">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
